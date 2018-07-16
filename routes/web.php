@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/times', function () {
-    return \App\Time::get();
+    return \App\Time::get(); 
 });
