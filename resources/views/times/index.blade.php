@@ -7,9 +7,13 @@
             <div class="card">
                 <div class="card-header">Times</div>
                     <form action="" method="GET">
-                        <label for="nome">Nome:</label>
-                        <input type="text" name="nome" id="nome">
-                        <input type="submit" value="Pesquisar">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Buscar time..." aria-label="Recipient's username" aria-describedby="basic-addon2" name="nome" value="">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+                            </div>
+                        </div>
+
                     </form>
                     <div class="container">
                         <div class="row">
