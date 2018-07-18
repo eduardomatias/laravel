@@ -20,13 +20,23 @@ class TimeController extends Controller
     public function index(Request $request)
     {
         $times = null;
+        $pagination = 10;
         try {
 
             $request->validate([
                 'id' => 'numeric|exists:times,id',
             ]);
+ 
+            if (!empty($request->id)) {
+                $times = Time::where('id', $request->id)->paginate(1);
 
-            $times = empty($request->id) ? Time::paginate(15) : Time::where('id', $request->id)->get();
+            } else if (!empty($request->nome)) {
+                $times = Time::where('nome', 'like', '%' . $request->nome . '%')->paginate($pagination);
+
+            } else {
+                $times = Time::paginate($pagination);
+                
+            } 
 
         } catch (\Exception $e) {
             dd($e);

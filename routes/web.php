@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/times/{id?}', 'TimeController@index');    
+    Route::get('/times/nome/{nome?}', 'TimeController@index');    
 });
 
 Auth::routes();
