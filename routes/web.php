@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/times', function () {
-    return \App\Time::get(); 
+Route::middleware('auth')->group(function () {
+    Route::get('/times/{id?}', 'TimeController@index');    
 });
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
