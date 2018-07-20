@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,41 +12,43 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        
+        $faker = Faker::create('pt_BR');
         // $this->call(UsersTableSeeder::class);
         DB::table('times')->delete();
         $times = array(
-            array('nome' => 'Alemanha'),
-            array('nome' => 'Arábia Saudita'),
-            array('nome' => 'Argentina'),
-            array('nome' => 'Austrália'),
-            array('nome' => 'Brasil'),
-            array('nome' => 'Bélgica'),
-            array('nome' => 'Colômbia'),
-            array('nome' => 'Coréia do Sul'),
-            array('nome' => 'Costa Rica'),
-            array('nome' => 'Croácia'),
-            array('nome' => 'Dinamarca'),
-            array('nome' => 'Egito'),
-            array('nome' => 'Espanha'),
-            array('nome' => 'França'),
-            array('nome' => 'Inglaterra'),
-            array('nome' => 'Irã'),
-            array('nome' => 'Islândia'),
-            array('nome' => 'Japão'),
-            array('nome' => 'Marrocos'),
-            array('nome' => 'México'),
-            array('nome' => 'Nigéria'),
-            array('nome' => 'Panamá'),
-            array('nome' => 'Peru'),
-            array('nome' => 'Polônia'),
-            array('nome' => 'Portugal'),
-            array('nome' => 'Rússia'),
-            array('nome' => 'Senegal'),
-            array('nome' => 'Sérvia'),
-            array('nome' => 'Suíça'),
-            array('nome' => 'Suécia'),
-            array('nome' => 'Tunísia'),
-            array('nome' => 'Uruguai'),
+            array('nome' => 'Alemanha', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Arábia Saudita', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Argentina', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Austrália', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Brasil', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Bélgica', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Colômbia', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Coréia do Sul', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Costa Rica', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Croácia', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Dinamarca', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Egito', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Espanha', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'França', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Inglaterra', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Irã', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Islândia', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Japão', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Marrocos', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'México', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Nigéria', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Panamá', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Peru', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Polônia', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Portugal', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Rússia', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Senegal', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Sérvia', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Suíça', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Suécia', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Tunísia', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
+            array('nome' => 'Uruguai', 'mascote' => $faker->firstName(), 'fundado_em' => $faker->date()),
         );
         DB::table('times')->insert($times);
 

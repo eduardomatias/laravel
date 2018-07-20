@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/info', function () {
+    phpinfo();
+    return;
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/times/{id?}', 'TimeController@index');    
     Route::get('/times/nome/{nome?}', 'TimeController@index');    
